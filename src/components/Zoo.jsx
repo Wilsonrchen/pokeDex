@@ -1,7 +1,27 @@
-import React from 'react'
+import { fetchPokemon } from "../api";
+import { useState, useEffect } from "react";
 
 const Zoo = () => {
-  return <div></div>
-}
+  const [pokemon, setPokemon] = useState([]);
+  useEffect(() => {
+    async function getAllPokemon() {
+      const pokemans = await fetchPokemon();
+      setPokemon(pokemans);
+    }
+    getAllPokemon();
+  }, []);
 
-export default Zoo
+  return (
+    <div>
+      {pokemon.map((poke) => {
+        return (
+          <div key={poke.id}>
+            <h2>{poke.name}</h2>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Zoo;

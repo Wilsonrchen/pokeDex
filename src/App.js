@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import Zoo from "./components/Zoo";
 
 /*
     GOAL:
@@ -22,7 +23,11 @@ import React from 'react'
  */
 
 function App() {
-  return <div></div>
+  return (
+    <div className="App">
+      <Zoo />
+    </div>
+  );
 }
 
-export default App
+export default App;
