@@ -3,6 +3,7 @@ const url = "https://pokeapi.co/api/v2/pokemon?limit=10";
 export const fetchPokemon = async () => {
   const response = await fetch(`${url}`);
   const result = await response.json();
+
   return result.results;
 };
 

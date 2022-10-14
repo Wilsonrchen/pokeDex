@@ -17,6 +17,7 @@ const Zoo = () => {
         return (
           <div key={poke.id}>
             <h2>{poke.name}</h2>
+            <button>See Details</button>
           </div>
         );
       })}
